@@ -499,6 +499,7 @@ async function getSubInfo(contract: BaseContract, event: ContractEventName): Pro
 
     } else if (isDeferred(event)) {
         // Deferred Topic Filter; e.g. `contract.filter.Transfer(from)`
+        fragment = event.fragment;
         topics = await event.getTopicFilter();
 
     } else if ("fragment" in event) {
